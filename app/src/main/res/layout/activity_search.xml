@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="projetodog.com.edu.projetodog.Activity.SearchActivity">
+
+    <TextView
+        android:padding="16dp"
+        android:id="@+id/textView_S_raca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raça: " />
+
+    <EditText
+
+        android:id="@+id/editText_S_Raça"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:padding="16dp"
+        android:id="@+id/textView_s_temperamento"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Temperamento: " />
+
+    <EditText
+
+        android:id="@+id/editText_s_teperamento"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+    <Button
+        android:id="@+id/button_buscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Buscar"/>
+
+
+</LinearLayout>
