@@ -32,8 +32,8 @@ public class SearchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
 
-        editTRaca = (EditText)findViewById(R.id.editText_S_Raça);
-        editTTemperamento = (EditText)findViewById(R.id.editText_s_teperamento);
+        editTRaca = (EditText) findViewById(R.id.editText_S_Raça);
+        editTTemperamento = (EditText) findViewById(R.id.editText_s_teperamento);
         bt = (Button) findViewById(R.id.button_buscar);
 
         bt.setOnClickListener(new View.OnClickListener() {
@@ -42,42 +42,15 @@ public class SearchActivity extends AppCompatActivity {
                 Log.i("Clique", "Clique ok!");
                 Toast.makeText(SearchActivity.this, "Clicou", Toast.LENGTH_LONG).show();
 
-                String readTwitterFeed = readTwitterFeed();
-                try {
-                    JSONArray jsonArray = new JSONArray(readTwitterFeed);
-                    Log.i("script", "Number of entries " + jsonArray.length());
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i);
-                        Log.i("script", jsonObject.getString("nome"));
-                    }
-                } catch (Exception e) {
-                    Log.i("Scrip", ""+e);
-                }
 
             }
         });
 
     }
-
-    public String readTwitterFeed() {
-        try {
-            OkHttpClient client = new OkHttpClient();
-
-            Request request = new Request.Builder()
-                    .url("http://10.0.3.2:8080/teste")
-                    .build();
-
-            Response response = client.newCall(request).execute();
-
-            if (response.code() != 200) {
-                return null;
-            } else {
-                String body = response.body().string();
-                return body;
-            }
-        }catch (Exception e){
-            return null;
-        }
-    }
-
 }
+
+
+
+
+
+
