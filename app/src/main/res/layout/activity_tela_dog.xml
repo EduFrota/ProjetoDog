@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:fillViewport="false">
+
+    <include layout="@layout/toolbar"
+             android:id="@+id/tolbar" />
+
+    <ScrollView
+        android:layout_below="@+id/tolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="projetodog.com.edu.projetodog.Activity.TelaDog"
+    android:weightSum="1">
+
+
+
+    <!--Imagem cao-->
+    <ImageView
+        android:id="@+id/imageView_cao"
+        android:layout_width="match_parent"
+        android:layout_height="231dp"
+        android:src="@drawable/cao" />
+    <!--Primeira caixa de Texto-->
+
+    <!-- Segunda Caixa de Texto -->
+    <RelativeLayout
+        android:padding="6dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- Texto lado Esquerdo-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <!-- Texto Superior-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/text_raca_Dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="5dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text="Raça" />
+
+                <TextView
+                    android:id="@+id/text_idade_Dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:text="8" />
+
+                <TextView
+                    android:textSize="17sp"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="anos" />
+            </LinearLayout>
+            <!--Texto Inferior-->
+            <TextView
+                android:layout_marginTop="14dp"
+                android:id="@+id/text_sexo_Dog"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sexo"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!--texto lado direito-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="vertical"
+            android:weightSum="1">
+            <!-- Icone -->
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="30dp"
+                android:layout_height="30sp"
+                android:foregroundGravity="center_vertical"
+                android:layout_gravity="right"
+                android:src="@drawable/staryelow"
+                android:layout_weight="1.20" />
+            <!-- texto Abaixo -->
+
+            <LinearLayout
+                android:layout_marginTop="8dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/imageView"
+                    android:layout_width="14sp"
+                    android:layout_height="14sp"
+                    android:layout_marginLeft="2dp"
+                    android:src="@drawable/mapmarker"/>
+
+                <TextView
+                    android:textSize="14sp"
+                    android:id="@+id/text_cidade_Dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Cidade" />
+                <TextView
+                    android:textSize="14sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=" - "
+                     />
+
+                <TextView
+                    android:textSize="14sp"
+                    android:id="@+id/text_estado_Dog"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="2dp"
+                    android:text="Es" />
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"
+        android:layout_margin="6dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="6dp">
+
+        <!--Liner Caracteristicas Fisicas -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_comprimento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Peso"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/text_cernelha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Comprimento"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:layout_height="wrap_content"
+                        android:text="Altura na Cernelha"
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pelagem"
+                        android:textSize="14sp"
+                        android:textColor="@color/black" />
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Numero filhotes por ninhada"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"/>
+                </LinearLayout>
+                <!-- Primeiro texto -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/valor_peso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="50 kg" />
+
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/valor_comprmento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="54 cm" />
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/valor_cernelha"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="100 cm" />
+
+
+                    <TextView
+                        android:id="@+id/valor_pelagem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="medio"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_marginTop="4dp"
+                        android:id="@+id/filhotes_ninhafa"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="5" />
+                </LinearLayout>
+            </LinearLayout>
+            <!--Quinto Texto-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="Cor"
+                    android:textColor="@color/black" />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:orientation="horizontal">
+                    <TextView
+
+                        android:id="@+id/cor1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="Marron" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="8pt"
+                        android:text=", " />
+
+                    <TextView
+
+                        android:id="@+id/cor2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="14sp"
+                        android:text="Preto" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--6 texto-->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Temperamento"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:textSize="14sp">
+
+                    <TextView
+                        android:id="@+id/temp1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Marron"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=", "
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/temp2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preto"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=", "
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/temp3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Preto"
+                        android:textSize="14sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!--* texto -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Data Estimada do Próximo Cio"
+                    android:textSize="14sp"
+                    android:textColor="@color/black" />
+                <TextView
+                    android:id="@+id/valor_data_cio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="10/10/10" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:textSize="14sp"
+            android:orientation="vertical">
+
+            <!--Primeiro Texto-->
+
+            <TextView
+                android:layout_marginTop="4dp"
+                android:id="@+id/vacinar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:text="Vacinado"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"
+        android:layout_marginTop="4dp"/>
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginLeft="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pedigree"
+        android:textSize="12sp"/>
+    <!-- Terceira Caixa de texto -->
+    <LinearLayout
+        android:padding="6dp"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+    <!-- Primeiro Texto -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="4dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Registro Geral: "
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+         <TextView
+             android:layout_marginTop="4dp"
+             android:id="@+id/rg"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:textSize="14sp"
+             android:text="12345"/>
+        </LinearLayout>
+        <!--Segundo texto -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nome do pai: "/>
+        <TextView
+            android:layout_marginTop="4dp"
+            android:textSize="14sp"
+            android:id="@+id/Nome_Pai"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thor"/>
+    </LinearLayout>
+        <!--Terceiro texto-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:text="Nome da Mãe: "/>
+            <TextView
+                android:layout_marginTop="4dp"
+                android:id="@+id/Nome_mãe"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lessy"/>
+        </LinearLayout>
+
+</LinearLayout>
+
+    <View
+        android:layout_marginTop="4dp"
+        android:layout_width="wrap_content"
+        android:layout_height="1px"
+        android:background="@color/gray"/>
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginLeft="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Informações do Dono"
+        android:textSize="12sp" />
+
+     <!--Terceira Caixa de Texto -->
+   <LinearLayout
+       android:padding="6dp"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:orientation="vertical">
+
+        <LinearLayout
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_marginRight="5dp"
+                android:layout_width="14sp"
+                android:layout_height="14sp"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/accountgray"/>
+       <TextView
+           android:id="@+id/text_NomeUser"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="14sp"
+           android:text="Eduardo Frota"
+           android:textColor="@color/colorAccent"/>
+       </LinearLayout>
+       <LinearLayout
+           android:layout_marginTop="4dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+       <ImageView
+           android:layout_marginRight="5dp"
+           android:layout_width="14sp"
+           android:layout_height="14sp"
+           android:layout_gravity="center_vertical"
+           android:src="@drawable/emailgray"/>
+
+       <TextView
+           android:id="@+id/text_email"
+           android:textSize="14sp"
+           android:textColor="@color/colorAccent"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="edu-frota@email"/>
+       </LinearLayout>
+
+       <LinearLayout
+           android:layout_marginTop="4dp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal">
+
+       <ImageView
+           android:layout_gravity="center_vertical"
+           android:layout_width="14sp"
+           android:layout_height="14sp"
+           android:layout_marginRight="5dp"
+           android:src="@drawable/phonegray"/>
+       <TextView
+           android:textSize="14sp"
+           android:textColor="@color/colorAccent"
+           android:id="@+id/text_Telefone"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="86 9999 9999" />
+       </LinearLayout>
+
+
+
+   </LinearLayout>
+
+</LinearLayout>
+    </ScrollView>
+</RelativeLayout>
