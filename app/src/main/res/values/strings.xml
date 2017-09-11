@@ -1,4 +1,58 @@
 <resources>
+    <string-array name="raca_Spinner">
+        <item>Raça</item>
+        <item>Afegão Hound</item>
+        <item>American Staffordshire Terrier</item>
+        <item>Beagle Harrier</item>
+        <item>Bearded Collie</item>
+        <item>Rottweiler</item>
+    </string-array>
+    <string-array name="estado_Spinner">
+        <item>Estado</item>
+        <item>São paulo</item>
+        <item>Piauí</item>
+        <item>Rio Grande do Sul</item>
+        <item>Bahia</item>
+        <item>Maranhão</item>
+    </string-array>
+    <string-array name="cidade_Spinner">
+        <item>Cidade</item>
+        <item>Teresina</item>
+        <item>Altos</item>
+        <item>José de Freitas</item>
+        <item>Oeiras</item>
+        <item>Barras</item>
+    </string-array>
+    <string-array name="pelagem_Spinner">
+        <item>Tipo</item>
+        <item>Pelagem Longa</item>
+        <item>Dupla Pelagem</item>
+        <item>Encaracolada</item>
+        <item>levemente Áspera</item>
+        <item>Fino</item>
+    </string-array>
+
+    <string-array name="cor_Spinner">
+        <item>Cor</item>
+        <item>Azul</item>
+        <item>Branco</item>
+        <item>Castanho</item>
+        <item>Chocolate</item>
+        <item>Cinzento</item>
+    </string-array>
+    <string-array name="temperamento_spinner">
+        <item>Temperamento</item>
+        <item>Amável</item>
+        <item>Divertido</item>
+        <item>corajoso</item>
+        <item>Confiável</item>
+        <item>Tranqüilo</item>
+        <item>Vivaz</item>
+        <item>Alerta</item>
+    </string-array>
+
+
+
     <string name="app_name">ProjetoDog</string>
 
 
@@ -18,7 +72,7 @@
     <!-- Toolbar titles when navigation menu item is selected -->
     <string-array name="nav_item_activity_titles">
         <item>Pagina Inicial</item>
-        <item>Cadastrar</item>
+        <item>Adidionar Cão</item>
         <item>Favoritos</item>
         <item>Meus</item>
         <item>Settings</item>

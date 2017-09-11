@@ -44,7 +44,7 @@ public class ConectarServico extends AsyncTask<String, Void, String>{
             OkHttpClient client = new OkHttpClient();
 
             Request request = new Request.Builder()
-                    .url("http://192.168.56.1/teste")
+                    .url("http://192.168.123.2/teste")
                     .build();
 
             Response response = client.newCall(request).execute();

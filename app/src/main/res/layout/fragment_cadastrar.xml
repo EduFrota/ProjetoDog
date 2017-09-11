@@ -1,55 +1,490 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="projetodog.com.edu.projetodog.Fragment.CadastrarFragment">
-    <TextView
-        android:paddingTop="10dp"
-        android:layout_margin="16dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Cadastro Animal"/>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
 
-    <LinearLayout
-         android:layout_marginTop="50dp"
-         android:layout_width="match_parent"
-         android:layout_height="match_parent"
-         android:orientation="vertical"
-         android:padding="16dp">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nome: " />
-        <EditText
-            android:id="@+id/EditText_nome"
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Raça: " />
-        <EditText
-            android:id="@+id/EditText_raca"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Idade: " />
-        <EditText
-            android:id="@+id/EditText_idade"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-        <Button
-            android:id="@+id/Button_cadastro"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cadastrar"/>
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:text="Adicionar Imagem"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="@dimen/PaddingTop"
+                android:paddingTop="@dimen/PaddingTop"
+                android:weightSum="1">
+
+                <ImageView
+                    android:id="@+id/loadimage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/camera1" />
+
+                <ImageView
+                    android:id="@+id/targetimage"
+                    android:layout_width="308dp"
+                    android:layout_height="163dp"
+                    android:background="@color/gray"
+                    android:src="@drawable/image" />
+            </LinearLayout>
 
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="10dp"
+                android:text="Informações"
+                android:textSize="@dimen/text_sizeSmal"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/PaddingTop">
+
+                <TextView
+                    android:id="@+id/textView_S_raca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:text="Genero: "
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <RadioGroup
+                    android:id="@+id/groupradio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:paddingTop="4dp">
+
+                    <RadioButton
+                        android:id="@+id/radio_genero_macho_cadastro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Macho"
+                        android:textSize="12sp" />
+
+                    <RadioButton
+                        android:id="@+id/radio_genero_femea_cadastro"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fêmea"
+                        android:textSize="12sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColorHint="@color/black">
+
+                <EditText
+                    android:id="@+id/edit_nome"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nome"
+                    android:imeOptions="actionUnspecified"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:textColor="@color/black"
+                    android:textColorHighlight="@color/black"
+                    android:textColorHint="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Spinner
+                android:id="@+id/spinner_cadastrar_raca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/PaddingTop" />
 
 
-    </LinearLayout>
+            <CheckBox
+                android:id="@+id/checkbox_cadastro_vacina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/PaddingTop"
+                android:text="Vacinado"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+            <LinearLayout
+                android:padding="@dimen/PaddingTop"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:textSize="14sp"
+                    android:text="Idade"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/seekTextIdade"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_size_normal" />
 
 
-</FrameLayout>
+            </LinearLayout>
+
+            <SeekBar
+                android:id="@+id/seek_cadastrar_idade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="20"
+                android:progress="1" />
+
+            <TextView
+
+                android:layout_marginTop="@dimen/PaddingTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/PaddingTop"
+                android:text="Aspectos Fisicos"
+                android:textSize="@dimen/text_sizeSmal"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:paddingTop="5dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="Peso"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_size_normal"/>
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/text_peso_cadastro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/seek_cadastrar_peso"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="120"
+                android:progress="1" />
+
+            <LinearLayout
+                android:paddingTop="@dimen/text_size_normal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comprimento"/>
+                <TextView
+                    android:layout_marginLeft="20dp"
+                    android:id="@+id/text_comprimento_cadastro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Comprimento"
+                    android:textSize="@dimen/text_size_normal" />
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/seek_cadastrar_comprimento"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="120"
+                android:progress="1" />
+            <LinearLayout
+                android:layout_marginTop="@dimen/PaddingTop"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:textSize="@dimen/text_size_normal"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Altura na Cernelha"/>
+                <TextView
+                    android:id="@+id/text_altura_cadastro"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:layout_marginLeft="20dp"
+                    android:textSize="@dimen/text_size_normal" />
+
+            </LinearLayout>
+
+
+            <SeekBar
+                android:id="@+id/seek_cadastrar_altura"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="120"
+                android:progress="1" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/text_size_normal"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Pelagem"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Spinner
+
+                    android:id="@+id/spinner_cadastrar_TipoPelo"
+                    android:layout_width="350dp"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/PaddingTop"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/PaddingTop">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="cores "
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_normal" />
+
+                <Spinner
+                    android:id="@+id/spinner_cadastrar_cor1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+
+                <Spinner
+                    android:id="@+id/spinner_cadastrar_cor2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+            </LinearLayout>
+
+            <View
+                android:paddingTop="@dimen/PaddingTop"
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:background="@color/gray" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:text="informe os Temperamentos do seu cao"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_normal" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <Spinner
+                    android:id="@+id/spinner_cadastrar_temperamento1"
+                    android:layout_marginTop="@dimen/PaddingTop"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+
+                <Spinner
+
+                    android:id="@+id/spinner_cadastrar_temperamento2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+
+                <Spinner
+                    android:id="@+id/spinner_cadastrar_temperamento3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="@dimen/PaddingTop" />
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                android:layout_marginTop="@dimen/PaddingTop"
+                android:layout_marginBottom="10dp"
+                android:background="@color/gray" />
+
+            <LinearLayout
+                android:layout_marginBottom="@dimen/PaddingTop"
+                android:id="@+id/cadastrar_femea"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/text_size_normal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Numero de fihotes por ninhada"
+                        android:paddingRight="20dp"/>
+                    <TextView
+                        android:textSize="@dimen/text_size_normal"
+                        android:id="@+id/text_filhotes_ninhada"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="" />
+
+
+                </LinearLayout>
+
+
+                <SeekBar
+                    android:id="@+id/seek_cadastrar_filhotes"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:max="20"
+                    android:progress="1" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Data provavel do proximo cio" />
+
+                <EditText
+                    android:id="@+id/editText_cadastrar_data"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="date" />
+            </LinearLayout>
+
+
+            <Switch
+                android:paddingTop="@dimen/PaddingTop"
+                android:id="@+id/switch_cadastrar_pedigree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:text="Pedigree"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linear_cadastrar_pedigree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PaddingTop"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:id="@+id/edit_cadastrar_rg"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Registro Geral"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PaddingTop"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:id="@+id/edit_cadastrar_pai"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nome do Pai"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/PaddingTop"
+                    android:textColorHint="@color/black">
+
+                    <EditText
+                        android:id="@+id/edit_cadastrar_mae"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Nome da mãe"
+                        android:imeOptions="actionUnspecified"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:textColor="@color/black"
+                        android:textColorHighlight="@color/black"
+                        android:textColorHint="@color/black"
+                        android:textSize="@dimen/text_size_normal" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

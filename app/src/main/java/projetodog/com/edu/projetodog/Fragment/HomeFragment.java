@@ -1,17 +1,12 @@
 package projetodog.com.edu.projetodog.Fragment;
 
-import android.content.Context;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.app.FragmentTabHost;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.ActionBarActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,6 +24,10 @@ import projetodog.com.edu.projetodog.R;
         ViewPager pager;
         ViewPagerAdapter pagerAdapter;
         private Resources res;
+        private int[] tabIcons = {
+                R.drawable.starwhite,
+
+        };
 
         //utilizada para verificar se a tela existe
         boolean hasStop = false;
@@ -46,10 +45,10 @@ import projetodog.com.edu.projetodog.R;
             pager.setAdapter(pagerAdapter);
 
             geraTabHost();
-
             return view;
 
         }
+
 
 
 
@@ -110,10 +109,10 @@ import projetodog.com.edu.projetodog.R;
                         frag = new FragmentTabMinhaLista();
                         break;
                     case 1:
-                       frag = new FragmentTabFavoritos();
+                        frag = new FragmentTabTodos();
                         break;
                     case 2:
-                        frag = new FragmentTabTodos();
+                        frag = new FragmentTabFavoritos();
                         break;
                 }
                 return frag;
@@ -130,22 +129,22 @@ import projetodog.com.edu.projetodog.R;
 
                 switch(position) {
                     case 0: return "Meus";
-                    case 1: return "Favoritos";
-                    case 2: return "Todos";
+                    case 1: return "Todos";
+                    case 2: return "Favoritos";
                     default: return "";
                 }
             }
         }
 
-        /*private Drawable getIcon(int position) {
+      private Drawable getIcon(int position) {
             switch(position) {
                 case 0:
-                    return res.getDrawable(R.drawable.ic_menu_send);
+                    return res.getDrawable(R.drawable.account);
                 case 1:
-                    return res.getDrawable(R.drawable.ic_menu_share);
+                    return res.getDrawable(R.drawable.starwhite);
             }
             return null;
-        }*/
+        }
 
         @Override
         public void onDestroy() {

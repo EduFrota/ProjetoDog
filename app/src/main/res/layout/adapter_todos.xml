@@ -1,42 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    android:padding="6dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view ="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:focusable="true"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingTop="10dp"
-    android:paddingBottom="10dp"
-    android:clickable="true"
-    android:background="?android:attr/selectableItemBackground"
-    android:orientation="vertical">
+    android:id="@+id/card_view_adapter">
 
-    <TextView
-        android:id="@+id/nome"
-        android:textSize="16dp"
-        android:textStyle="bold"
+
+
+    <LinearLayout
+        android:padding="6dp"
+        android:id="@+id/lineraText"
+        android:layout_toLeftOf="@+id/linerImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:id="@+id/textView_nome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="22dp"
+            android:text="Nome"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView_raca"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Raça"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:typeface="sans" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:padding="6dp"
+        android:gravity="right"
+        android:id="@+id/linerImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="1"
         android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/raca"
-        android:layout_below="@id/nome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <TextView
-        android:id="@+id/idade"
-        android:layout_width="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/temperamento"
-        android:layout_width="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_height="wrap_content"/>
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/img_dog"
+            android:layout_width="50sp"
+            android:layout_height="50sp"
+            android:src="@drawable/cao" />
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/textView_gener"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="genero"
+            android:textSize="6pt"/>
+
+    </LinearLayout>
 
 
-    >
+    <View
+        android:layout_alignParentBottom="true"
+        android:layout_width="550dp"
+        android:layout_height="1px"
+        android:background="@color/gray"
+        android:layout_toLeftOf="@+id/linerImg"
+        android:layout_toStartOf="@+id/linerImg">
+    </View>
 
 </RelativeLayout>

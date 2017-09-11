@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,13 +8,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <it.neokree.materialtabs.MaterialTabHost
             android:id="@+id/tabHost"
             android:layout_width="match_parent"
             android:layout_height="38dp"
             app:textColor="#fff"
             app:primaryColor="@color/colorPrimary"
-            app:accentColor="@color/colorAccent"/>
+            app:accentColor="@color/colorControlHighlight" />
 
         <android.support.v4.view.ViewPager
             android:id="@+id/pager"
@@ -23,4 +24,4 @@
             android:layout_below="@+id/tabHost" />
     </LinearLayout>
 
-</FrameLayout>
+</LinearLayout>

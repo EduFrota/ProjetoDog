@@ -38,6 +38,8 @@ public class MainActivity extends  AppCompatActivity {
     private Toolbar toolbar;
     private FloatingActionButton fab;
 
+
+
     private static final String urlProfileImg="https://lh3.googleusercontent.com/eCtE_G34M9ygdkmOpYvCag1vBARCmZwnVS6rS5t4JLzJ6QgQSBquM0nuTsCpLhYbKljoyS-txg";
     // index to identify current nav menu item
     public static int navItemIndex = 0;
@@ -68,12 +70,12 @@ public class MainActivity extends  AppCompatActivity {
 
         toolbar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         mHandler = new Handler();
 
         drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         fab = (FloatingActionButton) findViewById(R.id.fab);
-
         // Navigation view header
         navHeader = navigationView.getHeaderView(0);
         txtName = (TextView) navHeader.findViewById(R.id.name);
@@ -106,6 +108,7 @@ public class MainActivity extends  AppCompatActivity {
         }
     }
 
+
     /***
      * Load navigation menu header information
      * like background image, profile image
@@ -117,12 +120,6 @@ public class MainActivity extends  AppCompatActivity {
         txtWebsite.setText("www.androidhive.info");
 
         // Loading profile image
-        Glide.with(this).load(urlProfileImg)
-                .crossFade()
-                .thumbnail(0.5f)
-                .bitmapTransform(new CircleTransform(this))
-                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                .into(imgProfile);
 
     }
 
@@ -189,16 +186,7 @@ public class MainActivity extends  AppCompatActivity {
                 // Cadastro
                 CadastrarFragment cadastrarFragment = new CadastrarFragment();
                 return cadastrarFragment;
-           /*case 2:
-                // Favoritos
-                FavoritosFragment favoritosFragment = new FavoritosFragment();
-                return favoritosFragment;
-            case 3:
-                // Meus
-                MeusFragment meusFragment = new MeusFragment();
-                return meusFragment;
-
-            */case 2:
+            case 2:
                 // settings fragment
                 SettingsFragment settingsFragment = new SettingsFragment();
                 return settingsFragment;
@@ -242,10 +230,6 @@ public class MainActivity extends  AppCompatActivity {
                     case R.id.nav_meus:
                         navItemIndex = 3;
                         CURRENT_TAG = TAG_MEUS;
-                        break;
-                    case R.id.nav_settings:
-                        navItemIndex = 4;
-                        CURRENT_TAG = TAG_SETTINGS;
                         break;
                         // launch new intent instead of loading fragment
                     default:

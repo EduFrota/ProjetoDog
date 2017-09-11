@@ -24,10 +24,11 @@
 
             <ImageView
                 android:id="@+id/img_profile"
-                android:layout_width="@dimen/profile_width"
+                android:layout_width="24dp"
+                android:paddingRight="5dp"
                 android:layout_height="@dimen/profile_height"
-                android:paddingBottom="@dimen/nav_header_vertical_spacing"
-                android:src="@drawable/img_perfil" />
+                android:paddingBottom="30dp"
+                android:src="@drawable/account" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

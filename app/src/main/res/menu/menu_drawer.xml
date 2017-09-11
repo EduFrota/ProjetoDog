@@ -4,19 +4,21 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="@string/nav_inicio" />
+            android:title="@string/nav_inicio"
+            android:icon="@drawable/home"/>
         <item
             android:id="@+id/nav_cadastro"
-            android:title="@string/nav_cadastro" />
+            android:title="Adicionar cão"
+            android:icon="@drawable/plusgray"/>
         <item
             android:id="@+id/nav_favoritos"
-            android:title="@string/nav_favoritos" />
+            android:title="Editar Perfil"
+            android:icon="@drawable/accounteditgray"/>
         <item
             android:id="@+id/nav_meus"
-            android:title="@string/nav_meus" />
-        <item
-            android:id="@+id/nav_settings"
-            android:title="@string/nav_settings" />
+            android:title="Sair"
+            android:icon="@drawable/logoutvariant"/>
+
     </group>
 
 

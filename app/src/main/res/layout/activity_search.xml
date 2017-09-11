@@ -7,41 +7,473 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="projetodog.com.edu.projetodog.Activity.SearchActivity">
+    <include layout="@layout/toolbar"/>
 
-    <TextView
-        android:padding="16dp"
-        android:id="@+id/textView_S_raca"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Raça: " />
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
-    <EditText
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="6dp">
 
-        android:id="@+id/editText_S_Raça"
+            <TextView
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="5dp"
+                android:text="Busca Simples"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                        <TextView
+                            android:id="@+id/textView_S_raca"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="10dp"
+                            android:text="Genero"
+                            android:textColor="@color/black"
+                            android:textSize="14sp" />
+                        <!--<view
+            android:layout_width="match_parent"
+            android:layout_height="1px"
+            android:background="@color/gray"/>-->
+                        <RadioGroup
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:paddingTop="4dp">
+
+                            <RadioButton
+                                android:id="@+id/radio_genero_macho"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="onRadioButtonClicked"
+                                android:text="Macho"
+                                android:textSize="12sp" />
+
+                            <RadioButton
+                                android:id="@+id/radio_genero_femea"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:onClick="onRadioButtonClicked"
+                                android:text="Fêmea"
+                                android:textSize="12sp" />
+                        </RadioGroup>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                    <TextView
+
+                        android:id="@+id/textView_pedigree"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Pedigree"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <!--<view
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
+        android:layout_height="1px"
+        android:background="@color/gray"/>-->
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:paddingTop="4dp">
 
-    <TextView
-        android:padding="16dp"
-        android:id="@+id/textView_s_temperamento"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Temperamento: " />
+                        <RadioButton
+                            android:id="@+id/radio_pedigree_sim"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Sim"
+                            android:textSize="12sp" />
 
-    <EditText
+                        <RadioButton
+                            android:id="@+id/radio_pedigree_nao"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text="Não"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+                </LinearLayout>
+            </LinearLayout>
 
-        android:id="@+id/editText_s_teperamento"
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="@color/gray"
+                android:padding="6dp" />
+
+            <Spinner
+                android:id="@+id/spinner_raca"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp" />
+
+            <Spinner
+                android:id="@+id/spinner_Estado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp" />
+
+            <Spinner
+                android:id="@+id/spinner_cidade"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingTop="4dp" />
+
+            <CheckBox android:id="@+id/checkbox_vacina"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vacinado"
+                android:textSize="14sp"
+                android:textColor="@color/black"
+                android:onClick="onCheckboxClicked"/>
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1px"
+                android:background="@color/gray" />
+
+
+            <!-- Oculto -->
+            <Switch
+                android:layout_marginTop="4dp"
+                android:id="@+id/switch_Busca"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@color/colorPrimaryDark"
+                android:text="Busca Avançada"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+
+            <LinearLayout
+                android:id="@+id/Linearoculto_telaSearch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+
+                <!--RadioGroup idade -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:id="@+id/idade_dog"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Idade"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="4dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_idade1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 1 - 3 "
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_idade2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 3 - 5 "
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_idade3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 5 - 7"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_idade4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 7 - 9 "
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_idade5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 9 - 12 "
+                            android:textSize="12sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!--RadioGroup Altura na Cernelha-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:id="@+id/altura"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Altura na Cernelha"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <!--<view
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName" />
-    <Button
-        android:id="@+id/button_buscar"
+        android:layout_height="1px"
+        android:background="@color/gray"/>-->
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="4dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_altura1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 20 - 50 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_altura2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 50 - 70 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_altura3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 70 - 90 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_altura4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 90 - 120 cm"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <!--Radio Group comprimento -->
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:id="@+id/comprimento"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Comprimento"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <!--<view
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Buscar"/>
+        android:layout_height="1px"
+        android:background="@color/gray"/>-->
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="4dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_compri1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 20 - 50 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_compri2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 50 - 70 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_compri3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 70 - 90 cm"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_compri4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 90 - 120 cm"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+                </LinearLayout>
 
 
+                <!--Radio Group Peso-->
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingTop="4dp">
+
+                    <TextView
+                        android:id="@+id/peso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Peso"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <!--<view
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/gray"/>-->
+                    <RadioGroup
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingTop="4dp">
+
+                        <RadioButton
+                            android:id="@+id/radio_peso1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 20 - 50 kg"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_peso2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 50 - 70 kg"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_peso3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 70 - 90 kg"
+                            android:textSize="12sp" />
+
+                        <RadioButton
+                            android:id="@+id/radio_peso4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:onClick="onRadioButtonClicked"
+                            android:text=" 90 - 120 kg"
+                            android:textSize="12sp" />
+                    </RadioGroup>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1px"
+                    android:background="@color/gray"
+                    android:padding="6dp" />
+                <LinearLayout
+                    android:paddingTop="4dp"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <TextView
+                        android:textStyle="bold"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pelagem: "
+                        android:textSize="12sp" />
+                    <Spinner
+                        android:id="@+id/spinner_pelo1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp" />
+                    <Spinner
+                        android:id="@+id/spinner_corpelo"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp" />
+                </LinearLayout>
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="1px"
+                    android:background="@color/gray"
+                    android:padding="6dp" />
+
+                <Spinner
+                        android:id="@+id/spinner_temperamento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingTop="4dp" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
+
